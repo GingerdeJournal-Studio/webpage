@@ -74,7 +74,7 @@ nav ul li a {
     display: none;
 }
 
-.mobile-menu a {
+.mobile-menu a, .mobile-menu-x a {
     font-size: 25px;
     font-weight: 800;
     color: #f9f7f7;
@@ -100,8 +100,12 @@ nav ul li a {
 
 nav .sidebar li {
     position: relative;
-    margin-top: 20px;
+    margin-top: 40px;
     right: 0;
+
+    a {
+        font-size: 20px;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -115,5 +119,20 @@ nav .sidebar li {
 
     nav ul .menu {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    .header-menu .logo {
+        width: 400px;
+        height: 200px;
+        left: 20px;
+    }
+
+    .mobile-menu a {
+        position: absolute;
+        font-size: 40px;
+        top: -25px;
+        right: -20px;
     }
 }
