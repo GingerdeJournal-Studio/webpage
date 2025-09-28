@@ -57,7 +57,7 @@
             const header = document.querySelector('.header-menu');
             if((window.scrollY > window.innerHeight - 20) && window.innerWidth > 1000)
                 header.classList.add('scrolled');
-            else if(window.innerWidth < 1000)
+            else if((window.scrollY > 0) && window.innerWidth < 1000)
                 header.classList.add('scrolled');
             else
                 header.classList.remove('scrolled');
