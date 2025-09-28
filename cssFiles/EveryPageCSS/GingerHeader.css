@@ -1,33 +1,60 @@
 .ginger-header {
     width: 100%;
 
+    nav.scrolled
+    {
+        background: #112d4e;
+    }
+
     nav li a {
-        transition: 0.3s;
-        border-radius: 5px;
+        transition: 0.9s;
     }
 
     nav li a:hover {
-        border-bottom: 3px solid white;
         font-size: 20px;
+    }
+
+    nav li a:hover::after {
+        content: '';
+        background: #f9f7f7;
+        height: 3px;
+        width: 100%;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        border-radius: 5px;
     }
 }
 
 #menu-here {
-    border-bottom: 3px solid white;
     font-size: 17px;
+}
+
+#menu-here::after {
+    font-size: 17px;
+    content: '';
+    background: #f9f7f7;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    border-radius: 5px;
 }
 
 nav {
     width: 100%;
-    position: absolute;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 95px;
 }
 
 nav .logo {
     position: relative;
-    width: 80px;
+    width: 240px;
+    height: 150px;
     left: 80px;
 }
 
@@ -41,7 +68,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: #f9f7f7;
     font-weight: 500;
     font-size: 17px;
 }

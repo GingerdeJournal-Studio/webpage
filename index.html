@@ -8,16 +8,17 @@
     <link rel="stylesheet" href="cssFiles/EveryPageCSS/GingerHeader.css">
     <link rel="stylesheet" href="cssFiles/EveryPageCSS/GingerFooter.css">
     <link rel="stylesheet" href="cssFiles/index.css">
+    <script src="javascriptFiles/GingerHeader.js"></script>
 </head>
 <body>
     <div class="whole-page-box">
         <!--HEADER START-->
         <div class="ginger-header">
 
-            <!--<video autoplay loop muted class = "video" src="GingerMedia/Videos/GingerHeader.MP4"></video> -->
+            <video autoplay loop muted class = "video" src="GingerMedia/Videos/GingerHeader.MOV"></video>
 
-            <nav>
-                <a href="#"><img class = "logo" src="GingerMedia/Icons/截屏2025-09-17%20下午8.08.45%20(1).png" alt="logo"></a>
+            <nav class = "header-menu">
+                <a href="#"><img class = "logo" src="GingerMedia/Icons/GingerLogo.png" alt="logo"></a>
                 <ul>
                     <li><a id="menu-here" href="index.html">Home</a></li>
                     <li><a href="GingerResources.html">GingerResources</a></li>
@@ -41,4 +42,13 @@
         <!--FOOTER END-->
     </div>
 </body>
+    <script>
+        document.addEventListener("scroll", () => {
+            const header = document.querySelector('.header-menu');
+            if(window.scrollY > window.innerHeight - 20)
+                header.classList.add('scrolled');
+            else
+                header.classList.remove('scrolled');
+        })
+    </script>
 </html>
