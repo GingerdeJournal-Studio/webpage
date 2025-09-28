@@ -3,3 +3,13 @@ Dark blue: #112d4e
 Medium blue: #3f72af
 Light blue: #dbe2ef
 Light gray (white): #f9f7f7
+
+::after code to make a line under
+    content: '';
+    background: #f9f7f7;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    border-radius: 5px;
