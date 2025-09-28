@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="cssFiles/EveryPageCSS/GingerFooter.css">
     <link rel="stylesheet" href="cssFiles/GingerBlog.css">
     <script src="javascriptFiles/GingerHeader.js"></script>
+    <script src="https://kit.fontawesome.com/cb86199370.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="whole-page-box">
@@ -17,9 +18,18 @@
             <nav class = "header-menu">
                 <a href="index.html"><img class = "logo" src="GingerMedia/Icons/GingerLogo.png" alt="logo"></a>
                 <ul>
+                    <li class = "menu"><a href="index.html">Home</a></li>
+                    <li class = "menu"><a href="GingerResources.html">GingerResources</a></li>
+                    <li class = "menu"><a id="menu-here" href="GingerBlog.html">Blog</a></li>
+                    <li class = "menu"><a href="GingerContact.html">Contact</a></li>
+                    <li onclick = showSidebar() class = "mobile-menu"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+                </ul>
+
+                <ul class = "sidebar">
+                    <li onclick = closeSidebar() class = "mobile-menu"><a href="#"><i class="fa-solid fa-x"></i></a></li>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="GingerResources.html">GingerResources</a></li>
-                    <li><a  id="menu-here" href="GingerBlog.html">Blog</a></li>
+                    <li><a id="mobile-menu-here" href="GingerBlog.html">Blog</a></li>
                     <li><a href="GingerContact.html">Contact</a></li>
                 </ul>
             </nav>
