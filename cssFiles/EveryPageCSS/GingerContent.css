@@ -1,6 +1,6 @@
 .ginger-content {
+    margin: 50px 0 50px 0px;
     width: 90%;
-    height: 2000px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    height: auto;
+    background: none;
 }

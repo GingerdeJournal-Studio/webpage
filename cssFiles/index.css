@@ -1,8 +1,48 @@
 .video {
     width: 100%;
+    height: 100vh;
     position: absolute;
     left: 0;
     top: 0;
+    object-fit: cover;
+}
+
+.recommend-photos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title  {
+    margin-top: 40px;
+    text-align: center;
+    color: #3f72af;
+
+    h1 {
+        color: #112d4e;
+        margin-top: -10px;
+        font-size: 50px;
+    }
+}
+
+.pictures {
+    width: 100%;
+    margin: 20px auto;
+    columns: 3 200px;
+    column-gap: -20px;
+
+    img {
+        display: block;
+        margin-bottom: 20px;
+        width: 100%;
+        overflow: hidden;
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+
+    img:hover {
+        scale: 0.98;
+    }
 }
 
 
