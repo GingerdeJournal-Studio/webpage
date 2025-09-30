@@ -27,12 +27,12 @@
     margin-left: 1%;
 
     h1 {
-        font-size: 36px;
+        font-size: 28px;
         color: #112d4e;
     }
 
     h3 {
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 500;
     }
 }
@@ -57,9 +57,9 @@
 }
 
 .find-more {
-    margin-top: 50px;
+    margin-top: 20px;
     height: 400px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .images {
