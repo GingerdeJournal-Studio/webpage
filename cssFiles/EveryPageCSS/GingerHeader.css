@@ -1,12 +1,10 @@
 .ginger-header {
     position: relative;
     display: block;
-    height: 100vh;
     width: 100%;
     z-index: 999;
 
-    nav.scrolled
-    {
+    .header-menu {
         background: #112d4e;
     }
 
@@ -128,8 +126,8 @@ nav .sidebar li {
 
 @media only screen and (max-width: 980px) {
     .header-menu .logo {
-        width: 400px;
-        height: 200px;
+        width: 350px;
+        height: 180px;
         left: 20px;
     }
 
