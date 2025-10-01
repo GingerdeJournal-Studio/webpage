@@ -114,12 +114,15 @@
 }
 
 .info h2 {
+    font-size: 30px;
     text-align: center;
     padding: 70px 0;
     box-shadow: 10px 10px 30px 0px #dbe2ef;
     border-radius: 5px;
-    color: #112d4e;
-    transition: 0.3s;
+    transition: 0.1s;
+    background-size: cover;
+    background-position: center;
+    color: #f9f7f7;
 }
 
 .pick-category:hover {
