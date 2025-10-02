@@ -43,7 +43,7 @@
         width: 200px;
         height: 4px;
         position: absolute;
-        bottom: -180px;
+        bottom: -190px;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -105,7 +105,7 @@
 
 .info {
     display: grid;
-    grid-template-columns: repeat(4, minmax(250px,1fr));
+    grid-template-columns: 24% 24% 24% 24%;
     grid-gap: 20px;
 
     a {
@@ -132,11 +132,99 @@
     border-radius: 10px;
 }
 
-.pick-category:hover h2 {
-    color: white;
+#Film {
+    display: none;
 }
-/*CATEGORIY SECTION END*/
 
+@media only screen and (max-width: 1110px) {
+    .info {
+        grid-template-columns: 32% 32% 32%;
+    }
+
+    .info h2 {
+        font-size: 20px;
+    }
+
+    #Film {
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .info h2 {
+        font-size: 16px;
+    }
+
+    .info {
+        grid-template-columns: 31% 31% 31%;
+    }
+}
+/*CATEGORY SECTION END*/
+
+
+/*OUR SERVICES SECTION STARTS*/
+.our-services {
+    margin-top: 130px;
+    margin-left: -6%;
+    width: 112%;
+    height: auto;
+    background: #112d4e;
+    text-align: center;
+
+    h1 {
+        padding-top: 100px;
+        font-size: 50px;
+        color: #f9f7f7;
+    }
+}
+
+.our-services-content {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 18% 18% 18% 18%;
+    grid-gap: 30px;
+    padding-bottom: 130px;
+}
+
+.our-services-info {
+    margin-top: 40px;
+    width: 100%;
+    height: 400px;
+    background: yellow;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 1110px) {
+    .our-services-content {
+        grid-template-columns: 20% 20% 20% 20%;
+    }
+
+    .our-services-info {
+        height: 300px;
+    }
+}
+/*OUR SERVICES SECTION END*/
+
+
+/*BEHIND THE SCENE SECTION START*/
+.behind-the-scene {
+    text-align: left;
+    color: #3f72af;
+    margin-top: 100px;
+    width: 100%;
+    height: 200px;
+
+    h1 {
+        margin-top: -13px;
+        color: #112d4e;
+        font-size: 50px;
+        margin-bottom: 40px;
+        font-weight: bold;
+        position: relative;
+    }
+}
+/*BEHIND THE SCENE SECTION END*/
 
 
 
