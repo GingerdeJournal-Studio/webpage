@@ -6,6 +6,14 @@
 
 .header-menu-index.scrolled {
     background: #112d4e;
+
+    .logo {
+        display: none;
+    }
+
+    .logoChanged {
+        display: flex;
+    }
 }
 
 .video {
@@ -43,7 +51,7 @@
         width: 200px;
         height: 4px;
         position: absolute;
-        bottom: -180px;
+        bottom: -190px;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -307,6 +315,3 @@
     }
 }
 /*BEHIND THE SCENE SECTION END*/
-
-
-
