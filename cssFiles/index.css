@@ -48,8 +48,10 @@
 .pictures {
     width: 100%;
     margin: 20px auto;
-    columns: 3 200px;
-    column-gap: -20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 380px));
+    column-gap: 20px;
+    justify-content: center;
 
     img {
         display: block;
@@ -89,8 +91,9 @@
 
 .info {
     display: grid;
-    grid-template-columns: 24% 24% 24% 24%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 280px));
     grid-gap: 20px;
+    justify-content: center;
 
     a {
         text-decoration: none;
@@ -119,10 +122,6 @@
 }
 
 @media only screen and (max-width: 1110px) {
-    .info {
-        grid-template-columns: 32% 32% 32%;
-    }
-
     .info h2 {
         font-size: 20px;
     }
@@ -135,10 +134,6 @@
 @media only screen and (max-width: 800px) {
     .info h2 {
         font-size: 16px;
-    }
-
-    .info {
-        grid-template-columns: 31% 31% 31%;
     }
 }
 /*CATEGORY SECTION END*/
@@ -224,8 +219,9 @@
 
 /*BEHIND THE SCENE SECTION START*/
 .behind-the-scene {
+    width: 100%;
     margin-top: 100px;
-    padding: 40px 5%;
+    padding: 40px 0;
     color: #112d4e;
 }
 
@@ -249,7 +245,7 @@
 .scene-grid {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 360px));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 386px));
     gap: 30px;
 }
 
