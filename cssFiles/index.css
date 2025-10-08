@@ -91,7 +91,7 @@
 
 .info {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 280px));
+    grid-template-columns: repeat(auto-fit, max(280px));
     grid-gap: 20px;
     justify-content: center;
 
@@ -101,15 +101,21 @@
 }
 
 .info h2 {
+    color: #f9f7f7;
     font-size: 30px;
     text-align: center;
-    padding: 70px 0;
+}
+
+.pick-category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
     box-shadow: 0px 0px 10px 5px #f9f7f7;
     border-radius: 5px;
     transition: 0.1s;
     background-size: cover;
     background-position: center;
-    color: #f9f7f7;
 }
 
 .pick-category:hover {
@@ -121,13 +127,22 @@
     display: none;
 }
 
+@media only screen and (max-width: 1300px) {
+    .info {
+        grid-template-columns: repeat(auto-fit, max(230px));
+    }
+}
+
+
 @media only screen and (max-width: 1110px) {
     .info h2 {
         font-size: 20px;
     }
 
     #Film {
-        display: inline;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
