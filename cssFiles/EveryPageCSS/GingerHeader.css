@@ -4,10 +4,6 @@
     width: 100%;
     z-index: 999;
 
-    .header-menu {
-        background: #112d4e;
-    }
-
     nav li a {
         transition: 0.15s;
         padding-bottom: 2px;
@@ -21,6 +17,20 @@
         border-bottom: solid white 3px;
         border-bottom-left-radius: 2px;
         border-bottom-right-radius: 2px;
+    }
+}
+
+.header-menu {
+    background: #112d4e;
+}
+
+.header-menu.scrolled {
+    .logo {
+        display: none;
+    }
+
+    .logoChanged {
+        display: flex;
     }
 }
 
