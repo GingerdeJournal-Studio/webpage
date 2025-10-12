@@ -79,7 +79,7 @@
     margin-top: 45px;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0px, 310px));
+    grid-template-columns: repeat(auto-fit, max(310px));
     grid-gap: 10px;
     justify-content: center;
 }
@@ -88,4 +88,23 @@
     width: 100%;
     border-radius: 10px;
     height: 190px;
+}
+
+@media only screen and (max-width: 1120px) {
+    .info {
+        flex-direction: column;
+    }
+
+    .picture {
+        width: 100%;
+    }
+
+    .picture-info {
+        width: 100%;
+        text-align: center;
+    }
+
+    .picture-content-info {
+        text-align: left;
+    }
 }
