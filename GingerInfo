@@ -4,6 +4,8 @@ Medium blue: #3f72af
 Light blue: #dbe2ef
 Light gray (white): #f9f7f7
 
+Downloading page secondary title color: #717171
+
 ::after code to make a line under
     content: '';
     background: #f9f7f7;

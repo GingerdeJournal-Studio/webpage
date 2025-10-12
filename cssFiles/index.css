@@ -113,9 +113,9 @@
     height: 200px;
     box-shadow: 0px 0px 10px 5px #f9f7f7;
     border-radius: 5px;
-    transition: 0.1s;
     background-size: cover;
     background-position: center;
+    transition: 0.3s;
 }
 
 .pick-category:hover {
@@ -123,34 +123,12 @@
     border-radius: 10px;
 }
 
-#Film {
-    display: none;
-}
-
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1340px) {
     .info {
-        grid-template-columns: repeat(auto-fit, max(230px));
+        grid-template-columns: repeat(auto-fit, max(440px));
     }
 }
 
-
-@media only screen and (max-width: 1110px) {
-    .info h2 {
-        font-size: 20px;
-    }
-
-    #Film {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-@media only screen and (max-width: 800px) {
-    .info h2 {
-        font-size: 16px;
-    }
-}
 /*CATEGORY SECTION END*/
 
 
