@@ -1,174 +1,409 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fuzhou Lianjiang Qida Village | GingerJournal</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>GingerResources — Photography Assets</title>
+
+    <!-- 简单字体 fallback；生产可替换成 Google Fonts -->
     <style>
-        body {
-            font-family: "Inter", sans-serif;
-            margin: 0;
-            background-color: #ffffff;
-            color: #0b2545;
+        :root{
+            --brand:#0b2545;
+            --muted:#334155;
+            --soft:#f5f7fb;
+            --card-shadow: 0 6px 22px rgba(11,37,69,0.06);
+            --radius:12px;
+            --glass: rgba(255,255,255,0.65);
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+            margin:0;
+            font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+            color:var(--brand);
+            background: #ffffff;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            line-height:1.5;
         }
 
-        header {
-            background-color: #0b2545;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 60px;
+        /* Header */
+        header{
+            background:var(--brand);
+            color:white;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:14px 40px;
+            position:sticky;
+            top:0;
+            z-index:50;
+        }
+        header .brand{display:flex;align-items:center;gap:12px;font-weight:700}
+        header nav a{
+            color:rgba(255,255,255,0.9);
+            text-decoration:none;
+            margin-left:22px;
+            font-weight:600;
+            font-size:14px;
+        }
+        header nav a:hover{opacity:.9}
+
+        /* Hero */
+        .hero{
+            display:flex;
+            align-items:center;
+            gap:28px;
+            padding:44px 6%;
+            background:
+                    linear-gradient(180deg, rgba(11,37,69,0.02), rgba(11,37,69,0.0));
+        }
+        .hero .text{
+            max-width:760px;
+        }
+        .hero h1{
+            margin:0;
+            font-size:28px;
+            color:var(--brand);
+        }
+        .hero p{margin:12px 0 0;color:var(--muted)}
+        .hero .cta{
+            margin-top:18px;
+        }
+        .btn{
+            display:inline-block;
+            background:var(--brand);
+            color:#fff;
+            padding:10px 16px;
+            border-radius:10px;
+            text-decoration:none;
+            font-weight:700;
+            box-shadow: 0 6px 18px rgba(11,37,69,0.08);
+        }
+        .hero .preview{
+            flex:1;
+            display:flex;
+            justify-content:flex-end;
+        }
+        .hero .preview img{
+            width:340px;
+            max-width:45vw;
+            border-radius:14px;
+            box-shadow:var(--card-shadow);
+            object-fit:cover;
         }
 
-        header nav a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            margin-left: 30px;
-            font-weight: 500;
+        /* Categories */
+        .categories{
+            padding:18px 6%;
+            display:flex;
+            gap:10px;
+            flex-wrap:wrap;
+            align-items:center;
+        }
+        .cat{
+            padding:8px 14px;
+            border-radius:999px;
+            background:var(--soft);
+            color:var(--brand);
+            font-weight:600;
+            cursor:pointer;
+            border:1px solid rgba(11,37,69,0.04);
+        }
+        .cat.active{
+            background:var(--brand);
+            color:#fff;
+            box-shadow: 0 6px 18px rgba(11,37,69,0.08);
         }
 
-        header nav a:hover {
-            color: #fff;
+        /* Grid */
+        .grid-wrap{
+            padding:24px 6% 60px;
+            display:grid;
+            grid-template-columns: 1fr 360px;
+            gap:32px;
         }
 
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 60px 100px;
-            gap: 60px;
+        /* Main column: resource cards */
+        .resources{
+            display:grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap:20px;
+        }
+        .card{
+            background: white;
+            border-radius: var(--radius);
+            overflow:hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform .18s ease, box-shadow .18s ease;
+            display:flex;
+            flex-direction:column;
+            min-height:260px;
+        }
+        .card:hover{ transform: translateY(-6px); box-shadow: 0 14px 36px rgba(11,37,69,0.10); }
+        .card .thumb{
+            width:100%;
+            height:140px;
+            overflow:hidden;
+        }
+        .card .thumb img{
+            width:100%; height:100%; object-fit:cover;
+            display:block;
+        }
+        .card .body{padding:14px; flex:1; display:flex; flex-direction:column; gap:10px;}
+        .card h3{margin:0;font-size:16px}
+        .card p{margin:0;color:var(--muted);font-size:13px}
+        .card .actions{display:flex;gap:10px; align-items:center; margin-top:auto;}
+        .small-btn{
+            padding:8px 12px; border-radius:10px; border:1px solid rgba(11,37,69,0.06);
+            background:transparent; cursor:pointer; font-weight:700;
+        }
+        .download{
+            background:var(--brand); color:white; padding:8px 12px; border-radius:10px; font-weight:700;
         }
 
-        .main-image img {
-            width: 600px;
-            border-radius: 14px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        /* Right column: detail / featured guides / rules */
+        .side{
+            position:relative;
         }
-
-        .info-section {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+        .side .detail{
+            background: linear-gradient(180deg, rgba(255,255,255,0.8), #fff);
+            border-radius:12px;
+            padding:16px;
+            box-shadow:var(--card-shadow);
+            margin-bottom:18px;
         }
+        .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;font-size:13px;color:var(--muted)}
+        .meta div{background:var(--soft);padding:6px 10px;border-radius:8px}
+        .side h4{margin:0 0 10px 0}
 
-        .info-section h1 {
-            font-size: 26px;
-            margin-bottom: 8px;
+        .guides{
+            background: white;
+            border-radius:12px;
+            padding:12px;
+            box-shadow:var(--card-shadow);
+            margin-bottom:18px;
         }
+        .guide-item{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px dashed rgba(11,37,69,0.03)}
+        .guide-item:last-child{border-bottom:none}
+        .guide-item img{width:70px;height:50px;object-fit:cover;border-radius:8px}
 
-        .info-section p {
-            line-height: 1.6;
-            color: #334155;
+        .rules{
+            background:linear-gradient(180deg, var(--soft), #fff);
+            padding:12px;border-radius:12px;font-size:14px;color:var(--muted);
+            box-shadow:var(--card-shadow);
         }
+        .rules .row{display:flex;gap:10px;align-items:center;margin:8px 0}
+        .rules .icon{width:36px;height:36px;border-radius:8px;display:inline-grid;place-items:center;background:white;border:1px solid rgba(11,37,69,0.04)}
 
-        .download-btn {
-            background-color: #0b2545;
-            color: white;
-            font-weight: 600;
-            padding: 12px 30px;
-            border-radius: 10px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            width: fit-content;
+        footer{background:var(--brand);color:#fff;padding:20px 6%;text-align:center;margin-top:40px}
+
+        /* Responsive */
+        @media (max-width:1100px){
+            .grid-wrap{grid-template-columns:1fr}
+            .hero{flex-direction:column;align-items:flex-start}
+            .hero .preview{justify-content:flex-start}
         }
-
-        .download-btn:hover {
-            background-color: #133b6b;
-            transform: translateY(-2px);
-        }
-
-        .photo-meta {
-            background: #f8fafc;
-            border-radius: 10px;
-            padding: 15px;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        .more-images {
-            margin-top: 40px;
-        }
-
-        .more-images h2 {
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-
-        .more-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 16px;
-        }
-
-        .more-gallery img {
-            width: 100%;
-            border-radius: 12px;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .more-gallery img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        }
-
-        footer {
-            background-color: #0b2545;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 60px;
-        }
-
-        @media (max-width: 900px) {
-            .container {
-                flex-direction: column;
-                padding: 40px 20px;
-            }
+        @media (max-width:640px){
+            header{padding:12px 18px}
+            .hero{padding:28px 4%}
+            .hero h1{font-size:22px}
+            .hero .preview img{width:260px}
+            .cat{padding:7px 12px}
         }
     </style>
 </head>
-
 <body>
-<main class="container">
-    <div class="main-image">
-        <img src="GingerMedia/GingerHomePageRecommend/Dalian1.JPG" alt="Fuzhou Lianjiang Qida Village">
+
+<!-- Header -->
+<header>
+    <div class="brand">
+        <div style="width:38px;height:38px;border-radius:9px;background:#fff;color:var(--brand);display:grid;place-items:center;font-weight:800">GJ</div>
+        GingerJournal
     </div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Resources</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
 
-    <div class="info-section">
-        <h1>Fuzhou Lianjiang Qida Village</h1>
-        <p>Captured in Qidacun, Lianjiang County, Fuzhou — where the mountains meet the sea.
-            This peaceful coastal town showcases the harmony of blue ocean and green hills.</p>
-
-        <button class="download-btn">Download Image</button>
-
-        <div class="photo-meta">
-            📍 <b>Location:</b> Qidacun, Lianjiang, Fuzhou, Fujian, China<br>
-            📸 <b>Camera:</b> Canon EOS R10<br>
-            🎞️ <b>Lens:</b> RF 18–45mm<br>
-            📅 <b>Date:</b> July 2025<br>
-            🌤️ <b>Weather:</b> Sunny
+<!-- Hero -->
+<section class="hero" aria-labelledby="hero-title">
+    <div class="text">
+        <h1 id="hero-title">GingerResources</h1>
+        <p>Explore free photography presets, textures, fonts and quick guides — crafted for travel & street creators.</p>
+        <div class="cta">
+            <a class="btn" href="#resources-grid">Browse Presets</a>
         </div>
     </div>
-</main>
-
-<section class="more-images">
-    <div class="container" style="flex-direction: column;">
-        <h2>More Images of Lianjiang, Fuzhou</h2>
-        <div class="more-gallery">
-            <img src="GingerMedia/GingerHomePageRecommend/Dalian1.JPG" alt="">
-            <img src="GingerMedia/GingerHomePageRecommend/Dalian1.JPG" alt="">
-            <img src="GingerMedia/GingerHomePageRecommend/Dalian1.JPG" alt="">
-            <img src="GingerMedia/GingerHomePageRecommend/Dalian1.JPG" alt="">
-        </div>
+    <div class="preview" aria-hidden="true">
+        <!-- 替换为你的摄影封面图 -->
+        <img src="GingerMedia/GingerHomePageRecommend/Dalian1.JPG" alt="Hero preview — sample photo">
     </div>
 </section>
 
+<!-- Categories -->
+<div class="categories" role="tablist" aria-label="Resource Categories">
+    <div class="cat active" data-cat="all">All</div>
+    <div class="cat" data-cat="presets">Lightroom Presets</div>
+    <div class="cat" data-cat="textures">Textures / Grain</div>
+    <div class="cat" data-cat="fonts">Fonts & Graphics</div>
+    <div class="cat" data-cat="guides">Photography Guides</div>
+    <div class="cat" data-cat="wallpapers">Wallpapers</div>
+</div>
+
+<!-- Grid: resources + side -->
+<div class="grid-wrap">
+    <!-- Resources grid -->
+    <main id="resources-grid" class="resources" aria-live="polite">
+        <!-- 每个 card 的 data-type 用于筛选 -->
+        <article class="card" data-type="presets">
+            <div class="thumb"><img  src="GingerMedia/GingerHomePageRecommend/Dalian1.JPG" alt="Warm Travel Preset"></div>
+            <div class="body">
+                <h3>Warm Travel Preset Pack</h3>
+                <p>Soft highlights & natural skin tones for sunny street shots.</p>
+                <div class="actions">
+                    <button class="small-btn" onclick="previewResource(this)">Preview</button>
+                    <a class="download"  href="GingerMedia/GingerHomePageRecommend/Dalian1.JPG" download>Download</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="card" data-type="textures">
+            <div class="thumb"><img src="GingerMedia/GingerHomePageRecommend/Dalian1.JPG" alt="Film Grain Pack"></div>
+            <div class="body">
+                <h3>Film Grain & Texture Pack</h3>
+                <p>Subtle film grain to add film-like texture to portraits.</p>
+                <div class="actions">
+                    <button class="small-btn" onclick="previewResource(this)">Preview</button>
+                    <a class="download" href="#" download>Download</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="card" data-type="fonts">
+            <div class="thumb"><img src="GingerMedia/GingerHomePageRecommend/Dalian1.JPG" alt="Minimal Sans Font"></div>
+            <div class="body">
+                <h3>Minimal Sans — Typeface</h3>
+                <p>Clean, modern font well suited for captions and titles.</p>
+                <div class="actions">
+                    <button class="small-btn" onclick="previewResource(this)">Preview</button>
+                    <a class="download" href="#" download>Download</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="card" data-type="guides">
+            <div class="thumb"><img src="GingerMedia/GingerHomePageRecommend/Dalian1.JPG" alt="Golden hour guide"></div>
+            <div class="body">
+                <h3>Golden Hour Guide</h3>
+                <p>Quick tips to capture warm, dramatic evening light.</p>
+                <div class="actions">
+                    <button class="small-btn" onclick="previewResource(this)">Read</button>
+                    <a class="download" href="#" download>Save PDF</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="card" data-type="wallpapers">
+            <div class="thumb"><img src="GingerMedia/GingerHomePageRecommend/Dalian1.JPG" alt="Coastal wallpaper"></div>
+            <div class="body">
+                <h3>Coastal Wallpaper Pack</h3>
+                <p>High-res wallpapers sized for desktop & mobile.</p>
+                <div class="actions">
+                    <button class="small-btn" onclick="previewResource(this)">Preview</button>
+                    <a class="download" href="#" download>Download</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- ...可按需添加更多卡片 -->
+    </main>
+
+    <!-- Side column -->
+    <aside class="side" aria-label="Sidebar">
+        <!-- Detail / Quick info -->
+        <div class="detail" id="selected-detail">
+            <h4>Quick Tips • Photography Resources</h4>
+            <p style="margin:0;color:var(--muted)">精选由我拍摄并调色的预设、贴图以及短小教程，适合旅行与城市摄影。</p>
+            <div class="meta" style="margin-top:12px">
+                <div>📷 Travel-ready</div>
+                <div>🖼️ High quality</div>
+                <div>✏️ Editable</div>
+            </div>
+        </div>
+
+        <!-- Featured guides -->
+        <div class="guides" aria-labelledby="guides-title">
+            <h4 id="guides-title" style="margin-top:0">Featured Guides</h4>
+
+            <div class="guide-item">
+                <img src="GingerMedia/GingerHomePageRecommend/Dalian1.JPG" alt="">
+                <div>
+                    <div style="font-weight:700">Master Natural Light</div>
+                    <div style="font-size:13px;color:var(--muted)">Simple tricks to shoot without flash.</div>
+                </div>
+            </div>
+
+            <div class="guide-item">
+                <img src="GingerMedia/GingerHomePageRecommend/Dalian1.JPG" alt="">
+                <div>
+                    <div style="font-weight:700">Street Portrait Setup</div>
+                    <div style="font-size:13px;color:var(--muted)">Fast gear and posing ideas.</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Download rules -->
+        <div class="rules" aria-labelledby="rules-title" style="margin-top:12px">
+            <h4 id="rules-title" style="margin:0 0 8px 0">Usage Rules</h4>
+            <div class="row"><div class="icon">✅</div><div>Free to use for personal & commercial projects</div></div>
+            <div class="row"><div class="icon">✏️</div><div>Editing allowed (color, crop, etc.)</div></div>
+            <div class="row"><div class="icon">🚫</div><div>Do not redistribute the original files</div></div>
+            <div class="row"><div class="icon">💬</div><div>Credit appreciated but optional</div></div>
+        </div>
+    </aside>
+
+</div>
+
 <footer>
-    © 2025 GingerJournal. All rights reserved.
+    © 2025 GingerJournal · Made for photographers and creators
 </footer>
+
+<!-- 简单脚本：分类筛选 + 资源预览 modal（轻量） -->
+<script>
+    // Category filtering
+    document.querySelectorAll('.cat').forEach(btn=>{
+        btn.addEventListener('click', e=>{
+            document.querySelectorAll('.cat').forEach(c=>c.classList.remove('active'));
+            btn.classList.add('active');
+            const type = btn.dataset.cat;
+            document.querySelectorAll('.card').forEach(card=>{
+                if(type === 'all' || card.dataset.type === type){
+                    card.style.display = ''; // show
+                } else {
+                    card.style.display = 'none'; // hide
+                }
+            });
+        });
+    });
+
+    // Preview stub: 将来可以替换为 lightbox / modal
+    function previewResource(button){
+        const card = button.closest('.card');
+        const title = card.querySelector('h3').innerText;
+        const desc = card.querySelector('p').innerText;
+        // 将 side detail 替换为所点资源的简短信息（即时反馈）
+        const detail = document.getElementById('selected-detail');
+        detail.innerHTML = '<h4>' + title + '</h4><p style="margin:0;color:var(--muted)">' + desc + '</p>' +
+            '<div class="meta" style="margin-top:12px"><div>📁 Type: ' + (card.dataset.type||'resource') + '</div><div>⬇️ Click Download to save</div></div>';
+        // 平滑滚动到 side（小动画）
+        detail.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+</script>
+
 </body>
 </html>
