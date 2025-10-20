@@ -117,11 +117,7 @@ nav {
     }
 
     .aside-content {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        margin-top: -50px;
-        gap: 30px;
+        display: none
     }
 
     .filter-button {
@@ -177,7 +173,7 @@ nav {
 }
 
 .filter-cards-info-words h1 {
-    margin: 10px 0;
+    margin: 8px 0;
     color: #112d4e;
     font-size: 18px;
 }
@@ -190,20 +186,65 @@ nav {
     text-decoration: none;
 }
 
-.filter-cards-info-words button {
+.icon {
+    margin-top: 3px;
+    margin-left: -3px;
+    margin-bottom: -10px;
+    font-size: 14px;
+    color: #112d4e;
+}
+
+.preview-download {
     position: absolute;
     bottom: 20px;
-    width: 100px;
+    width: 100%;
+    height:auto;
+}
+
+.download-btn button {
+    width: 80px;
     height: 30px;
-    font-weight: bold;
+    border-radius: 8px;
     border: none;
-    border-radius: 20px;
     background: #112d4e;
-    color: #f9f7f7;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
 }
 
 .hidden {
     display: none;
+}
+
+.popup-image {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    background: black;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+}
+
+.popup-image img {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #fff;
+    border-radius: 3px;
+    object-fit: cover;
+    width: 50%;
+}
+
+.popup-image span {
+    position: absolute;
+    top: 0; right: 10px;
+    font-size: 60px;
+    font-weight: bolder;
+    color: #fff;
+    cursor: pointer;
+    z-index: 999;
 }
 
 .aside-content {
@@ -321,5 +362,33 @@ nav {
     gap: 8px;
     padding: 10px 0;
     line-height: 15px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+.page-btn {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+.page-btn:hover {
+    background-color: #f5f5f5;
+}
+.page-btn.active {
+    background: #112d4e;
+    color: #fff;
+    border-color: #111;
+}
+.filter-cards-info {
+    display: flex;
+    margin-bottom: 20px;
+    transition: 0.3s;
 }
 
