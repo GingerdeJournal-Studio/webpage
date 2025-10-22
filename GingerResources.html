@@ -56,6 +56,73 @@
             <div class="filter-cards">
                 <section class="filter-cards-crd">
 
+                    <!--central-park-10-3-2024-->
+                    <div class="filter-cards-info buildings">
+                        <div class="img"><img src="GingerMedia/GingerAllImages/central-park-10-3-2024/_MG_0287.JPG" alt=""></div>
+                        <div class="filter-cards-info-words">
+                            <div class="icon"><i class="fa-solid fa-location-dot"></i> Brooklyn Bridge</div>
+                            <h1>Brooklyn Bridge Structure</h1>
+                            <p>This picture is taken on the Brooklyn Bridge and showing how the structure looks.</p>
+                            <div class="preview-download">
+                                <a class="download-btn" href="GingerMedia/GingerAllImages/central-park-10-3-2024/_MG_0287.JPG" download><button>Download</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-cards-info buildings">
+                        <div class="img"><img src="GingerMedia/GingerAllImages/central-park-10-3-2024/_MG_0230.JPG" alt=""></div>
+                        <div class="filter-cards-info-words">
+                            <div class="icon"><i class="fa-solid fa-location-dot"></i> Dumbo</div>
+                            <h1>Brooklyn Bridge at Dumbo</h1>
+                            <p>This picture is taken near the park at Dumbo, showing how the light is making the bridge look dark.</p>
+                            <div class="preview-download">
+                                <a class="download-btn" href="GingerMedia/GingerAllImages/central-park-10-3-2024/_MG_0230.JPG" download><button>Download</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-cards-info buildings">
+                        <div class="img"><img src="GingerMedia/GingerAllImages/central-park-10-3-2024/_MG_0202.JPG" alt=""></div>
+                        <div class="filter-cards-info-words">
+                            <div class="icon"><i class="fa-solid fa-location-dot"></i> Central Park</div>
+                            <h1>The reflection image of the buildings</h1>
+                            <p>Taken in Central Part, the reflection and the nice weather really mad this picture stands out.</p>
+                            <div class="preview-download">
+                                <a class="download-btn" href="GingerMedia/GingerAllImages/central-park-10-3-2024/_MG_0202.JPG" download><button>Download</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-cards-info buildings">
+                        <div class="img"><img src="GingerMedia/GingerAllImages/central-park-10-3-2024/_MG_0174.JPG" alt=""></div>
+                        <div class="filter-cards-info-words">
+                            <div class="icon"><i class="fa-solid fa-location-dot"></i> Central Park</div>
+                            <h1>The "secret" building</h1>
+                            <p>Taken in Central Part, near the main object of this is from the boat rental place near the water.</p>
+                            <div class="preview-download">
+                                <a class="download-btn" href="GingerMedia/GingerAllImages/central-park-10-3-2024/_MG_0174.JPG" download><button>Download</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-cards-info landscape">
+                        <div class="img"><img src="GingerMedia/GingerAllImages/central-park-10-3-2024/_MG_0134.JPG" alt=""></div>
+                        <div class="filter-cards-info-words">
+                            <div class="icon"><i class="fa-solid fa-location-dot"></i> Central Park</div>
+                            <h1>The sidewalk trees</h1>
+                            <p>This picture is taken in Central Park, under the trees that are making a "protection".</p>
+                            <div class="preview-download">
+                                <a class="download-btn" href="GingerMedia/GingerAllImages/central-park-10-3-2024/_MG_0134.JPG" download><button>Download</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-cards-info landscape">
+                        <div class="img"><img src="GingerMedia/GingerAllImages/central-park-10-3-2024/_MG_0043.JPG" alt=""></div>
+                        <div class="filter-cards-info-words">
+                            <div class="icon"><i class="fa-solid fa-location-dot"></i> Central Park</div>
+                            <h1>The "shape" of a light</h1>
+                            <p>A shot done in Central Park that are based on the shadow created by the sun.</p>
+                            <div class="preview-download">
+                                <a class="download-btn" href="GingerMedia/GingerAllImages/central-park-10-3-2024/_MG_0043.JPG" download><button>Download</button></a>
+                            </div>
+                        </div>
+                    </div>
 
                     <!--Garden-08-21-2024-->
                     <div class="filter-cards-info buildings">
@@ -124,6 +191,7 @@
                             </div>
                         </div>
                     </div>
+
                 </section>
 
                 <section class="popup-image">
@@ -202,78 +270,78 @@
         FOOTER END-->
     </div>
 </body>
-    <script>
-        document.addEventListener("scroll", () => {
-            const header = document.querySelector('.header-menu');
-            if(window.scrollY > 0)
-                header.classList.add('scrolled');
-            else
-                header.classList.remove('scrolled');
-        })
+<script>
+    document.addEventListener("scroll", () => {
+        const header = document.querySelector('.header-menu');
+        if(window.scrollY > 0)
+            header.classList.add('scrolled');
+        else
+            header.classList.remove('scrolled');
+    })
 
-        const itemsPerPage = 9;
-        const cards = document.querySelectorAll('.filter-cards-info');
-        const paginationContainer = document.querySelector('.pagination');
-        const filterButtons = document.querySelectorAll('.filter-btn');
+    const itemsPerPage = 9;
+    const cards = document.querySelectorAll('.filter-cards-info');
+    const paginationContainer = document.querySelector('.pagination');
+    const filterButtons = document.querySelectorAll('.filter-btn');
 
-        let currentPage = 1;
-        let currentFilter = 'all';
+    let currentPage = 1;
+    let currentFilter = 'all';
 
-        // Function to show filtered items
-        function getFilteredItems() {
-            return Array.from(cards).filter(card => {
-                return currentFilter === 'all' || card.classList.contains(currentFilter);
-            });
-        }
+    // Function to show filtered items
+    function getFilteredItems() {
+        return Array.from(cards).filter(card => {
+            return currentFilter === 'all' || card.classList.contains(currentFilter);
+        });
+    }
 
-        // Function to render pagination buttons
-        function renderPagination(filteredItems) {
-            paginationContainer.innerHTML = '';
-            const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+    // Function to render pagination buttons
+    function renderPagination(filteredItems) {
+        paginationContainer.innerHTML = '';
+        const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
 
-            if (totalPages <= 1) return;
+        if (totalPages <= 1) return;
 
-            for (let i = 1; i <= totalPages; i++) {
-                const btn = document.createElement('button');
-                btn.textContent = i;
-                btn.classList.add('page-btn');
-                if (i === currentPage) btn.classList.add('active');
-                btn.addEventListener('click', () => {
-                    currentPage = i;
-                    showPage();
-                });
-                paginationContainer.appendChild(btn);
-            }
-        }
-
-        // Function to show the correct items
-        function showPage() {
-            const filteredItems = getFilteredItems();
-            const start = (currentPage - 1) * itemsPerPage;
-            const end = start + itemsPerPage;
-
-            cards.forEach(card => (card.style.display = 'none'));
-            filteredItems.forEach((card, index) => {
-                if (index >= start && index < end) {
-                    card.style.display = 'flex';
-                }
-            });
-
-            renderPagination(filteredItems);
-        }
-
-        // filter button
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                currentFilter = button.dataset.filter;
-                currentPage = 1; // reset to first page
+        for (let i = 1; i <= totalPages; i++) {
+            const btn = document.createElement('button');
+            btn.textContent = i;
+            btn.classList.add('page-btn');
+            if (i === currentPage) btn.classList.add('active');
+            btn.addEventListener('click', () => {
+                currentPage = i;
                 showPage();
             });
+            paginationContainer.appendChild(btn);
+        }
+    }
+
+    // Function to show the correct items
+    function showPage() {
+        const filteredItems = getFilteredItems();
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+
+        cards.forEach(card => (card.style.display = 'none'));
+        filteredItems.forEach((card, index) => {
+            if (index >= start && index < end) {
+                card.style.display = 'flex';
+            }
         });
 
-        // Initial display page
-        showPage(1);
+        renderPagination(filteredItems);
+    }
+
+    // filter button
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            currentFilter = button.dataset.filter;
+            currentPage = 1; // reset to first page
+            showPage();
+        });
+    });
+
+    // Initial display page
+    showPage(1);
 </script>
 </html>
