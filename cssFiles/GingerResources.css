@@ -207,6 +207,12 @@ nav {
     font-size: 12px;
     cursor: pointer;
     bottom: 10px;
+    transition: 0.3s;
+}
+
+.download-btn button:hover {
+    background: #3f72af;
+    scale: 0.95;
 }
 
 .hidden {
@@ -364,6 +370,7 @@ nav {
     display: flex;
     justify-content: center;
     gap: 8px;
+    margin-bottom: 100px;
 }
 .page-btn {
     background-color: #fff;
@@ -371,7 +378,7 @@ nav {
     padding: 8px 14px;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: 0.3s;
     font-weight: bold;
 }
 .page-btn:hover {
