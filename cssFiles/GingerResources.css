@@ -15,6 +15,20 @@ nav {
     padding: 40px 0;
 }
 
+.header-menu {
+    background: #112d4e;
+}
+
+@media only screen and (max-width:1000px) {
+    .header-menu {
+        background: none;
+    }
+
+    .header-menu.scrolled {
+        background: #112d4e;
+    }
+}
+
 .header-info {
     display: flex;
     flex-direction: column;
@@ -95,6 +109,31 @@ nav {
     gap: 3%;
 }
 
+.aside-toggle-btn {
+    display: none;
+
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    width: 50px;
+    height: 50px;
+    background: #112d4e;
+    border-radius: 100%;
+    z-index: 9999;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+
+    transition: 0.3s;
+    border: 3px solid white;
+}
+
+.aside-toggle-btn:hover {
+    cursor: pointer;
+    scale: 0.95;
+}
+
+
 @media only screen and (max-width:1000px) {
     .header {
         flex-direction: column;
@@ -117,7 +156,26 @@ nav {
     }
 
     .aside-content {
-        display: none
+        opacity: 0;
+        display: flex;
+        position: fixed;
+        left: 0; top: 0;
+        padding: 150px 10px 150px 10px;
+        gap: 30px;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .aside-content.active {
+        opacity: 100%;
+    }
+
+    .aside-content.active {
+        backdrop-filter: blur(10px);
+    }
+
+    .aside-toggle-btn {
+        display: inline-block;
     }
 
     .filter-button {
@@ -250,7 +308,7 @@ nav {
 }
 
 .aside-content {
-    width: 320px;
+    width: auto;
     border-radius: 15px;
     height: auto;
     float: right;
@@ -262,6 +320,7 @@ nav {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
     border-radius: 15px;
     margin-bottom: 20px;
+    background: white;
 }
 
 .usage-rules {

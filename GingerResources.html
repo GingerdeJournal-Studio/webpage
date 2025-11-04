@@ -40,7 +40,7 @@
         <div class="ginger-content">
             <div class="header">
                 <div class="header-info"><h1>GingerResources</h1><p>Explore free photography presets, textures, fonts and quick guides — crafted for travel & street creators.</p>
-                   <button> <a href="GingerBlog.html">View My Blog</a></button></div>
+                   <button><a href="GingerBlog.html">View My Blog</a></button></div>
                 <div class="header-info-img"><img src="GingerMedia/GingerHomePageRecommend/Dalian1.JPG" alt=""></div>
             </div>
 
@@ -404,8 +404,8 @@
                     <span class="close">&times;</span>
                     <img src="" alt="">
                 </section>
+                <button id="aside-toggle" class="aside-toggle-btn"><i class="fa-solid fa-bell"></i></button>
                 <aside class="aside-content">
-
                     <div class="quick-tips">
                         <div class="aside-info">
                             <h5>Quick Tips • GingerJournal</h5>
@@ -469,17 +469,26 @@
         </div>
         <!--CONTENT END-->
 
-        <!--FOOTER START
         <div class="ginger-footer">
-
+            <a href="index.html"><img src="GingerMedia/Icons/GingerLogo.png" alt="logo"></a>
         </div>
-        FOOTER END-->
     </div>
 </body>
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("aside-toggle");
+        const aside = document.querySelector(".aside-content");
+
+        toggleBtn.addEventListener("click", function () {
+            aside.classList.toggle("active");
+        });
+    });
+
     document.addEventListener("scroll", () => {
         const header = document.querySelector('.header-menu');
-        if(window.scrollY > 0)
+        if(window.scrollY > 260 && window.innerWidth < 1000)
+            header.classList.add('scrolled');
+        else if(window.scrollY > 0 && window.innerWidth > 1000)
             header.classList.add('scrolled');
         else
             header.classList.remove('scrolled');

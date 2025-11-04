@@ -54,6 +54,8 @@ nav {
     position: absolute;
     width: 240px;
     height: 160px;
+    background-position: center;
+    background-size: cover;
     left: 80px;
     top: -30px;
     transition: 0.3s;
@@ -132,11 +134,11 @@ nav .sidebar li {
 }
 
 @media only screen and (max-width: 980px) {
-    .header-menu .logo {
+    .header-menu .logo, .header-menu .logoChanged {
         margin-top: -10px;
         width: 280px;
         height: 180px;
-        left: 20px;
+        left: 50px;
     }
 
     .mobile-menu a {

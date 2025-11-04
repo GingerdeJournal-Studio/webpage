@@ -3,11 +3,11 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100px;
     background: #112d4e;
     z-index: 999;
 
     a img {
         width: 200px;
+        padding: 0 100px;
     }
 }

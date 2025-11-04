@@ -125,7 +125,7 @@
 
 @media only screen and (max-width: 1340px) {
     .info {
-        grid-template-columns: repeat(auto-fit, max(440px));
+        grid-template-columns: repeat(auto-fit, max(400px));
     }
 }
 
