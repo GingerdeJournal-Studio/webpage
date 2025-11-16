@@ -6,6 +6,7 @@ Light gray (white): #f9f7f7
 
 Downloading page secondary title color: #717171
 
+pre CONDITION: THE TARGET MUST BE position: relative;
 ::after code to make a line under
     content: '';
     background: #f9f7f7;
@@ -15,6 +16,3 @@ Downloading page secondary title color: #717171
     bottom: -5px;
     left: 0;
     border-radius: 5px;
-
-
-    76 39
