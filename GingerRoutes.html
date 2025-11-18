@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>GingerContact</title>
+    <title>GingerRoutes</title>
     <link rel="stylesheet" href="cssFiles/EveryPageCSS/GingerWholePageBox.css">
+    <link rel="stylesheet" href="cssFiles/EveryPageCSS/GingerContent.css">
     <link rel="stylesheet" href="cssFiles/EveryPageCSS/GingerHeader.css">
     <link rel="stylesheet" href="cssFiles/EveryPageCSS/GingerFooter.css">
-    <link rel="stylesheet" href="cssFiles/GingerContact.css">
-    <script src="javascriptFiles/GingerHeader.js"></script>
+    <link rel="stylesheet" href="cssFiles/GingerRoutes.css">
     <script src="https://kit.fontawesome.com/cb86199370.js" crossorigin="anonymous"></script>
     <link rel="icon" type="svg" href="GingerMedia/Icons/WhiteGinger.svg">
 </head>
@@ -22,8 +22,8 @@
                     <li class = "menu"><a href="index.html">Home</a></li>
                     <li class = "menu"><a href="GingerResources.html">GingerResources</a></li>
                     <li class = "menu"><a href="GingerBlog.html">Blog</a></li>
-                    <li class = "menu"><a href="GingerRoutes.html">Routes</a></li>
-                    <li class = "menu"><a id="menu-here" href="GingerContact.html">Contact</a></li>
+                    <li class = "menu"><a id="menu-here" href="GingerRoutes.html">Routes</a></li>
+                    <li class = "menu"><a href="GingerContact.html">Contact</a></li>
                     <li onclick = showSidebar() class = "mobile-menu"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
                 </ul>
 
@@ -32,33 +32,12 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="GingerResources.html">GingerResources</a></li>
                     <li><a href="GingerBlog.html">Blog</a></li>
-                    <li><a href="GingerRoutes.html">Routes</a></li>
-                    <li><a id="mobile-menu-here" href="GingerContact.html">Contact</a></li>
+                    <li><a id="mobile-menu-here" href="GingerRoutes.html">Routes</a></li>
+                    <li><a href="GingerContact.html">Contact</a></li>
+                    <li><a href="GingerContact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
-        <!--HEADER END-->
-
-        <!--CONTENT START-->
-        <div class="ginger-content">
-
-        </div>
-        <!--CONTENT END-->
-
-        <!--FOOTER START
-        <div class="ginger-footer">
-
-        </div>
-        FOOTER END-->
     </div>
 </body>
-    <script>
-        document.addEventListener("scroll", () => {
-            const header = document.querySelector('.header-menu');
-            if(window.scrollY > 0)
-                header.classList.add('scrolled');
-            else
-                header.classList.remove('scrolled');
-        })
-    </script>
 </html>

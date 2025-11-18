@@ -16,3 +16,8 @@ pre CONDITION: THE TARGET MUST BE position: relative;
     bottom: -5px;
     left: 0;
     border-radius: 5px;
+
+Icons:
+Location: <img class="icons" src="GingerMedia/Icons/Location.svg" alt="">
+Calendar: <img class="icons" src="GingerMedia/Icons/Calendar%20Dark.svg" alt="">
+Ginger: <img class="icons" src="GingerMedia/Icons/Ginger.svg" alt="">
