@@ -1,0 +1,10 @@
+h1, h2 {
+    font-family: "DM Serif Text", serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+h3 {
+    font-family: "Caveat", cursive;
+    font-weight: normal;
+}

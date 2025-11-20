@@ -1,5 +1,8 @@
-/*GINGER HEADER STARTS*/
+h3 {
+    font-size: 25px;
+}
 
+/*GINGER HEADER STARTS*/
 .ginger-header {
     height: 100vh;
 }
