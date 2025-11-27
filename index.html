@@ -302,17 +302,18 @@
         <div class="ginger-footer">
             <a href="index.html"><img src="GingerMedia/Icons/GingerLogo.png" alt="logo"></a>
         </div>
+
         <!--FOOTER END-->
     </div>
 </body>
     <script>
         document.addEventListener("scroll", () => {
             const header = document.querySelector('.header-menu-index');
-            if((window.scrollY > window.innerHeight - 100))
+            if((window.scrollY > window.innerHeight - 92))
                 header.classList.add('scrolled');
             else
                 header.classList.remove('scrolled');
-        })
+        });
 
         function showSidebar() {
             const sidebar = document.querySelector('.sidebar')
@@ -324,4 +325,5 @@
             sidebar.style.right = '-280px'
         }
     </script>
+
 </html>
