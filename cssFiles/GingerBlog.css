@@ -48,7 +48,7 @@ body {
 }
 
 .blogPost {
-    height: 400px;
+    height: 430px;
     background: #f9f7f7;
 }
 
@@ -71,7 +71,7 @@ body {
 }
 
 .info-box-content h1 {
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .content-box-info-box a {
@@ -214,6 +214,7 @@ body {
     display: inline-block;
     width: 100%;
     margin-top: 15px;
+    padding-right: 2rem;
     font-size: 16px;
 }
 
