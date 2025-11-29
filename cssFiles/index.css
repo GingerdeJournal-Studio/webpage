@@ -1,3 +1,7 @@
+* {
+    transition: 0.3s;
+}
+
 h3 {
     font-size: 25px;
 }
@@ -52,7 +56,7 @@ h3 {
     width: 100%;
     margin: 20px auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 380px));
+    grid-template-columns: repeat(auto-fit, max(375px));
     column-gap: 20px;
     justify-content: center;
 
@@ -128,8 +132,32 @@ h3 {
 }
 
 @media only screen and (max-width: 1340px) {
+    .pictures {
+        grid-template-columns: repeat(auto-fit, max(310px));
+    }
+
     .info {
-        grid-template-columns: repeat(auto-fit, max(400px));
+        grid-template-columns: repeat(auto-fit, max(225px));
+    }
+}
+
+@media (max-width: 820px) {
+    .pictures {
+        grid-template-columns: repeat(auto-fit, max(300px));
+    }
+
+    .info {
+        grid-template-columns: repeat(auto-fit, max(300px));
+    }
+}
+
+@media (max-width: 710px) {
+    .pictures {
+        grid-template-columns: repeat(auto-fit, max(250px));
+    }
+
+    .info {
+        grid-template-columns: repeat(auto-fit, max(250px));
     }
 }
 
@@ -242,8 +270,24 @@ h3 {
 .scene-grid {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 386px));
+    grid-template-columns: repeat(auto-fit, max(386px));
     gap: 30px;
+}
+
+@media (max-width: 950px) {
+    .scene-grid {
+        grid-template-columns: repeat(auto-fit, max(320px));
+    }
+}
+
+@media (max-width: 750px) {
+    .scene-grid {
+        grid-template-columns: repeat(auto-fit, max(280px));
+    }
+
+    .download-btn {
+        font-size: 12px;
+    }
 }
 
 .scene-card {
@@ -306,7 +350,7 @@ h3 {
     font-weight: 700;
     padding: 10px 20px;
     border-radius: 6px;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .download-btn:hover {
@@ -383,7 +427,7 @@ h3 {
 }
 
 .how-to-use h3 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-bottom: 10px;
     color: #222;
 }
