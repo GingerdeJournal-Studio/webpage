@@ -2,17 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>GingerJournal - Featured Guides</title>
+    <title>GingerContact</title>
     <link rel="stylesheet" href="cssFiles/EveryPageCSS/GingerWholePageBox.css">
     <link rel="stylesheet" href="cssFiles/EveryPageCSS/GingerContent.css">
     <link rel="stylesheet" href="cssFiles/EveryPageCSS/GingerHeader.css">
     <link rel="stylesheet" href="cssFiles/EveryPageCSS/GingerFooter.css">
-    <link rel="stylesheet" href="cssFiles/EveryPageCSS/GingerFeaturedGuides.css">
-    <script src="javascriptFiles/GingerHeader.js"></script>
+    <link rel="stylesheet" href="cssFiles/GIngerContact.css">
     <script src="https://kit.fontawesome.com/cb86199370.js" crossorigin="anonymous"></script>
     <link rel="icon" type="svg" href="GingerMedia/Icons/WhiteGinger.svg">
 
-    <!--custom fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
@@ -27,51 +25,30 @@
     <div class="whole-page-box">
         <!--HEADER START-->
         <div class="ginger-header">
-            <nav class = "header-menu">
+
+            <nav class = "header-menu-index">
                 <a href="index.html"><img class = "logo" src="GingerMedia/Icons/GingerLogo.png" alt="logo"></a>
                 <a href="index.html"><img class = "logoChanged" src="GingerMedia/Icons/GingerLogoChanged.png" alt="logo"></a>
                 <ul>
                     <li class = "menu"><a href="index.html">Home</a></li>
                     <li class = "menu"><a href="GingerResources.html">GingerResources</a></li>
                     <li class = "menu"><a href="GingerBlog.html">Blog</a></li>
-                    <li class = "menu"><a href="GingerContact.html">Contact</a></li>
+                    <li class = "menu"><a id="menu-here" href="GingerContact.html">Contact</a></li>
                     <li onclick = showSidebar() class = "mobile-menu"><a href="#"><i class="fa-solid fa-bars"></i></a></li>
                 </ul>
 
                 <ul class = "sidebar">
-                    <li onclick = closeSidebar() class = "mobile-menu"><a href="#"><i class="fa-solid fa-x"></i></a></li>
+                    <li onclick = closeSidebar() class = "mobile-menu-x"><a href="#"><i class="fa-solid fa-x"></i></a></li>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="GingerResources.html">GingerResources</a></li>
                     <li><a href="GingerBlog.html">Blog</a></li>
-                    <li><a href="GingerContact.html">Contact</a></li>
+                    <li><a id="mobile-menu-here" href="GingerContact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
         <!--HEADER END-->
 
-        <div class="ginger-footer">
-            <a id="icon" href="index.html"><img src="GingerMedia/Icons/WhiteGinger.svg"></a>
 
-            <div class="footerInfo">
-                <ul class="pages">
-                    <h2>Our Pages</h2>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="GingerResources.html">GingerResources</a></li>
-                    <li><a href="GingerBlog.html">Blog</a></li>
-                    <li><a href="GingerRoutes.html">GingerRoutes</a></li>
-                    <li><a href="">Contact</a></li>
-                </ul>
-
-                <ul class="pages">
-                    <h2>Our Categories</h2>
-                    <li><a href="GingerCategories/GingerCategories%20-%20NY.html">New York</a></li>
-                    <li><a href="GingerCategories/GingerCategories%20-%20Qingdao.html">Qingdao</a></li>
-                    <li><a href="GingerCategories/GingerCategories%20-%20Nanjing.html">Nanjing</a></li>
-                    <li><a href="GingerCategories/GingerCategories%20-%20Fuzhou.html">Fuzhou</a></li>
-                    <li><a href="GingerResources.html">View All</a></li>
-                </ul>
-            </div>
-        </div>
     </div>
 </body>
 </html>
