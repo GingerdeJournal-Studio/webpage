@@ -48,7 +48,41 @@
         </div>
         <!--HEADER END-->
 
-
+        <section class="form">
+            <form action="https://api.web3forms.com/submit" method="POST" class="formLeft">
+                <h1>Get in Touch with Us!</h1>
+                <hr>
+                <input type="hidden" name="access_key" value="aeb13dda-3026-4730-9826-9aab118f8917">
+                <input type="text" name="name" placeholder="Your Name" required class="formInput">
+                <input type="email" name="email" placeholder="Your Email" required class="formInput">
+                <textarea name="message" placeholder="Your message" required class="formInput"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="formRight">
+                <div class="formImage"></div>
+            </div>
+        </section>
     </div>
 </body>
+    <script>
+        document.addEventListener("scroll", () => {
+        const header = document.querySelector('.header-menu');
+        if(window.scrollY > 260 && window.innerWidth < 1000)
+            header.classList.add('scrolled');
+        else if(window.scrollY > 0 && window.innerWidth > 1000)
+            header.classList.add('scrolled');
+        else
+            header.classList.remove('scrolled');
+        })
+
+        function showSidebar() {
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.right = '0'
+        }
+
+        function closeSidebar() {
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.right = '-280px'
+        }
+    </script>
 </html>

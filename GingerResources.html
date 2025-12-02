@@ -976,6 +976,16 @@
             header.classList.remove('scrolled');
     })
 
+    function showSidebar() {
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.right = '0'
+    }
+
+    function closeSidebar() {
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.right = '-280px'
+    }
+
     const itemsPerPage = 12;
     const cards = document.querySelectorAll('.filter-cards-info');
     const paginationContainer = document.querySelector('.pagination');
