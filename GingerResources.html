@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="cssFiles/EveryPageCSS/GingerWholePageBox.css">
     <link rel="stylesheet" href="cssFiles/EveryPageCSS/GingerHeader.css">
     <link rel="stylesheet" href="cssFiles/EveryPageCSS/GingerFooter.css">
+    <link rel="stylesheet" href="cssFiles/EveryPageCSS/GingerContent.css">
     <link rel="stylesheet" href="cssFiles/GingerResources.css">
     <script src="javascriptFiles/GingerHeader.js"></script>
     <script src="https://kit.fontawesome.com/cb86199370.js" crossorigin="anonymous"></script>
@@ -955,8 +956,28 @@
             </div>
         </div>
     </div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" />
+    </div>
+
 </body>
 <script>
+    document.addEventListener('click', function (e) {
+        if (e.target.tagName === 'IMG') {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightbox.style.display = 'block';
+            lightboxImg.src = e.target.src;
+        }
+
+        if (e.target.classList.contains('close') || e.target.id === 'lightbox') {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    });
+
+    // qwkjfbcqwkfbqwkf
     document.addEventListener("DOMContentLoaded", function () {
         const toggleBtn = document.getElementById("aside-toggle");
         const aside = document.querySelector(".aside-content");

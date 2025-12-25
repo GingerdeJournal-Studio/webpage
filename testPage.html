@@ -2,334 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <title>Bouncing Dots Loader</title>
     <style>
-        *{
-            margin: 0; padding: 0;
-            box-sizing: border-box;
-            outline: none; border: none;
-            text-decoration: none;
-            transition: 0.3s;
-            color: black;
-        }
-
-        .blogPost-container{
+        body {
+            display: flex;
             justify-content: center;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 280px));
-            gap: 1rem;
-        }
-
-        .blogPost {
-            height: 400px;
-        }
-
-        .blogPost:hover {
-            scale: 0.98;
-        }
-
-        .info-box-background-img {
-            width: 100%;
-            height: 80%;
-            background-position: center;
-            background-size: cover;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-        }
-
-        .info-box-content {
-            padding: 5px;
-        }
-
-        .info-box-content h1 {
-            font-size: 13px;
-        }
-
-        .content-box-info-box a {
-            text-decoration: none;
-        }
-
-        .content-box-info-box h1 {
-            font-size: 15px;
-            line-height: 18px;
-            font-weight: 500;
-            color: #112d4e;
-        }
-
-        .info-box-who-post {
-            position: relative;
-        }
-
-        .info-box-profile-pic {
-            position: absolute;
-            bottom: -32px;
-            width: 20px;
-            height: 20px;
-            border-radius: 100%;
-
-            background-position: center;
-            background-size: cover;
-        }
-
-        .info-box-who-post p {
-            position: absolute;
-            left: 25px;
-            bottom: -31px;
-            font-size: 13px;
-            color: rgb(156, 156, 156);
-        }
-
-        /*preview box*/
-
-        .blogPost-preview{
-            position: fixed;
-            top:0; left:0;
-            min-height: 100vh;
-            width: 100%%;
-            background: rgba(0,0,0,.8);
-            display: none;
             align-items: center;
-            justify-content: center;
+            height: 100vh;
+            background: #f0f0f0;
+            margin: 0;
         }
 
-        .blogPost-preview .preview {
-            display: none;
-            padding: 1rem;
-            text-align: center;
-            background: #fff;
-            position: relative;
-            margin: 1rem;
-            width: 80%;
-            height: 90vh;
-            border-radius: 15px;
-        }
-
-        .blogPost-preview .preview.active{
+        .dots {
             display: flex;
-            gap: 2%;
+            gap: 8px;
         }
 
-        .blogPost-preview .preview .fa-times{
-            position: absolute;
-            top: 1rem; right: 1.5rem;
-            cursor: pointer;
-            color:#112d4e;
-            font-size: 3rem;
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: #3498db;
+            border-radius: 50%;
+            animation: bounce 0.6s infinite alternate;
         }
 
-        .blogPost-preview .preview .fa-times:hover {
-            scale: 0.90;
-            color: #3f72af;
+        .dot:nth-child(2) { animation-delay: 0.2s; }
+        .dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to   { transform: translateY(-15px); }
         }
-
-        .imageContainer, .contentContainer {
-            width: 48%;
-        }
-
-        .imageContainer .images {
-            width: 100%;
-            height: calc(90vh - 2rem);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border-top-left-radius: 15px;
-            border-bottom-left-radius: 15px;
-        }
-
-        .userProfile {
-            display: flex;
-            width: 100%;
-            height: 60px;
-        }
-
-        .profilePicture {
-            margin: auto 0;
-            width: 50px;
-            height: 50px;
-            border-radius: 100%;
-            background-position: center;
-            background-size: cover;
-            border: #112d4e 2px solid;
-        }
-
-        .userName {
-            margin: auto 10px;
-            font-size: 20px;
-            color: #333333;
-            font-weight: 500;
-        }
-
-        .postInfo {
-            margin-top: 20px;
-            width: 100%;
-            height: 510px;
-        }
-
-        .postInfo h1 {
-            text-align: start;
-            font-size: 22px;
-            line-height: 25px;
-        }
-
-        .postInfoContent {
-            margin-top: 0.5rem;
-            text-align: start;
-            width: 100%;
-            height: 55vh;
-            overflow-y: scroll;
-        }
-
-        .postInfoContent span {
-            display: inline-block;
-            margin-top: 15px;
-        }
-
-        .postLocationDate {
-            position: absolute;
-            bottom: 1rem;
-            border-top: black 2px solid;
-            padding-top: 5px;
-        }
-
-        .postLocationDate span {
-            text-transform: uppercase;
-            margin-right: 2rem;
-        }
-
-        @media only screen and (max-width:1000px) {
-            .blogPost-preview .preview .fa-times {
-                font-size: 2rem;
-            }
-
-            .blogPost-preview .preview.active {
-                flex-direction: column;
-                width: 100%;
-                margin: 0;
-                height: auto;
-                overflow-y: scroll;
-            }
-
-            .imageContainer, .contentContainer {
-                width: 100%;
-            }
-
-            .imageContainer .images {
-                height: 40vh;
-                background-size: contain;
-            }
-
-            .contentContainer {
-                height: 60vh;
-            }
-
-            .postInfoContent {
-                height: auto;
-                padding-bottom: 20px;
-            }
-
-            .postInfo h1 {
-                font-size: 18px;
-                line-height: 22px;
-            }
-
-            .postInfo span {
-                font-size: 14px;
-            }
-
-            .postLocationDate {
-                bottom: auto;
-                padding-bottom: 3rem;
-            }
-        }
-
-
-        </style>
+    </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="blogPost-container">
-
-        <div class="blogPost" data-name="p-1">
-            <a href="#">
-                <div style="background-image: url('GingerMedia/GingerBlogPhotos/出发沈阳07-17.JPG');" class="info-box-background-img"></div>
-                <div class="info-box-content">
-                    <h1>Fuzhou - Shengyang | Going to Shenyang just for a music concert...</h1>
-                    <div class="info-box-who-post">
-                        <div style="background-image: url('GingerMedia/Icons/GingerJournalProfilePic.JPG');" class="info-box-profile-pic"></div>
-                        <p>GingerJournal - 07/17/2025</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-
-    </div>
-
+<div class="dots">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
 </div>
-
-<div class="blogPost-preview">
-
-    <div class="preview" data-target="p-1">
-        <i class="fas fa-times"></i>
-        
-        <div class="imageContainer">
-            <div class="images" style="background-image: url('GingerMedia/GingerBlogPhotos/出发沈阳07-17.JPG')";></div>
-        </div>
-        
-        <div class="contentContainer">
-            <div class="userProfile">
-                <div class="profilePicture" style="background-image: url('GingerMedia/Icons/GingerJournalProfilePic.JPG');"></div>
-                <div class="userName"><p>GingerJournal</p></div>
-            </div>
-
-            <div class="postInfo">
-                <div class="postInfoTitle"><h1>Fuzhou - Shengyang | Going to Shenyang just for a music concert and "suffering" for 10 hours</h1></div>
-                <div class="postInfoContent">
-                    <span>enyang just for a music concert and "suffenyang just for a music concert and "suffenyang just for a music concert and "suffenyang just for a music concert and "suff</span>
-                    <span>!!!! just for a music concert and "suffenyang just for a music concert and "suff</span><span>enyang just for a music concert and "suffenyang just for a music concert and "suffenyang just for a music concert and "suffenyang just for a music concert and "suff</span>
-                    <span>!!!! just for a music concert and "suffenyang just for a music concert and "suff</span><span>enyang just for a music concert and "suffenyang just for a music concert and "suffenyang just for a music concert and "suffenyang just for a music concert and "suff</span>
-                    <span>!!!! just for a music concert and "suffenyang just for a music concert and "suff</span><span>enyang just for a music concert and "suffenyang just for a music concert and "suffenyang just for a music concert and "suffenyang just for a music concert and "suffhi</span>
-
-                </div>
-                <div class="postLocationDate">
-                    <span>Shengyang</span>
-                    <span>07/17/2025</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-</div>
-
 </body>
-<script>
-    let preveiwContainer = document.querySelector('.blogPost-preview');
-    let previewBox = preveiwContainer.querySelectorAll('.preview');
-
-    document.querySelectorAll('.blogPost-container .blogPost').forEach(blogPost =>{
-        blogPost.onclick = () =>{
-            preveiwContainer.style.display = 'flex';
-            let name = blogPost.getAttribute('data-name');
-            previewBox.forEach(preview =>{
-                let target = preview.getAttribute('data-target');
-                if(name == target){
-                    preview.classList.add('active');
-                }
-            });
-        };
-    });
-
-    previewBox.forEach(close =>{
-        close.querySelector('.fa-times').onclick = () =>{
-            close.classList.remove('active');
-            preveiwContainer.style.display = 'none';
-        };
-    });
-</script>
 </html>
