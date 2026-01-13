@@ -108,3 +108,74 @@
         text-align: left;
     }
 }
+
+/*HOW TO USE THESE PHOTOS START*/
+.how-to-use {
+    width: 100%;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.how-to-use .container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.how-to-use h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #112d4e;
+}
+
+.how-to-use .subtitle {
+    color: #666;
+    margin-top: -15px;
+    margin-bottom: 50px;
+}
+
+.how-to-use .rules {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 285px));
+    gap: 24px;
+}
+
+.how-to-use .card {
+    margin-top: -10px;
+    background: #f9f7f7;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px #f9f7f7;
+    padding: 30px 20px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.how-to-use .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.how-to-use .icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.how-to-use h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.how-to-use p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.how-to-use .license {
+    color: #999;
+    font-size: 0.85rem;
+    margin-top: 50px;
+}
+/*HOW TO USE THESE PHOTOS END*/
